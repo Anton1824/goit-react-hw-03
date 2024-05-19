@@ -21,12 +21,12 @@ const App = () => {
 
   const [filtered, setFiltered] = useState("");
 
-  const handleInpute = () => {
+  const handleInput = () => {
     return startData.filter((item) =>
       item.name.toLowerCase().includes(filtered.trim().toLowerCase())
     );
   };
-  const newData = handleInpute();
+  const newData = handleInput();
   const handleSubmit = (values, actions) => {
     actions.resetForm();
     const formValues = { ...values, id: nanoid() };
