@@ -1,6 +1,6 @@
 import * as Yup from "yup";
-import { Field, Form, Formic } from "formic";
-import { ErrorMessage } from "formic";
+import { Field, Form, Formik } from "formik";
+import { ErrorMessage } from "formik";
 import { nanoid } from "nanoid";
 
 import c from "./ContactForm.module.css";
@@ -26,7 +26,7 @@ const ContactForm = ({ handleSubmit }) => {
   const numberFieldId = nanoid();
 
   return (
-    <Formic
+    <Formik
       initialValues={initialValues}
       onSubmit={handleSubmit}
       validationSchema={FeedbackSchema}
@@ -52,7 +52,7 @@ const ContactForm = ({ handleSubmit }) => {
           Add contact
         </button>
       </Form>
-    </Formic>
+    </Formik>
   );
 };
 
